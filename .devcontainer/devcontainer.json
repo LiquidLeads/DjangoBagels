@@ -1,0 +1,14 @@
+{
+	"title": "DjangoBagels DevContainer Settings",
+	"description": "",
+	"image": "",
+	
+	"customizations": {
+    "vscode": {
+      "extensions": {
+		  [""]
+	  }
+    }
+  },
+  "forwardPorts": [3000]
+}
