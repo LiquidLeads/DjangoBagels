@@ -1,0 +1,12 @@
+services:
+  site:
+    image: newspectrum/technovine
+
+  server:
+    image: ubuntu:latest
+  
+  db:
+    image: mysql:latest
+
+  backend:
+    image: nginx:latest
