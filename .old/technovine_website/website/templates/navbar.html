@@ -1,0 +1,28 @@
+<div>
+    {% url 'index' as index_url %}
+    <span>{% if request.path == index_url %}Home{% else %}<a href="{% url 'index' %}">Home</a>{% endif %}</span>
+    {% url 'about' as about_url %}
+    <span>{% if request.path == about_url %}About Us{%else %}<a href="{% url 'about' %}">About Us</a>{% endif %}</span>
+    {% url 'services' as services_url %}
+    <span>{% if request.path == services_url %}Services{% else %}<a href="{% url 'services' %}">Services</a>{% endif %}</span>
+    {% url 'contact' as contact_url %}
+    <span>{% if request.path == contact_url %}Contact Us{% else %}<a href="{% url 'contact' %}">Contact Us</a>{% endif %}</span>
+    <span style="float:right">
+        {% if user.is_authenticated %}
+            {% url 'client_profile' as client_profile_url %}
+            <span>Hi {% if request.path == client_profile_url %}{{user.username}}{% else %}<a href="{{ client_profile_url }}">{{user.username}}</a>{% endif %}!</span>
+            <!--<span>Hi <a href="{%url 'client_profile' %}">{{user.username}}</a>!</span> -->
+            <span><a href="{% url 'client logout' %}">Client Logout</a></span>
+        {% else %}
+            <span><a href="{% url 'client login' %}">Client Login</a></span>
+        {% endif %}
+    </span>
+    <span style="float:right">
+        {% if user.is_authenticated %}
+            <span>Hi {{user.username}}</span>
+            <span><a href="{% url 'contractor logout' %}">Contractor Logout</a></span>
+        {% else %}
+            <span><a href="{% url 'contractor login' %}">Contractor Login</a></span>
+        {% endif %}
+    </span>
+</div>

@@ -1,0 +1,29 @@
+{%extends 'base.html'%}
+
+{% block title %}Client Profile{% endblock %}
+
+{% block content %}
+<h1>
+    {{ user.get_full_name }} (@{{ user.username }})
+</h1>
+
+{% with client_profile=user.profile %}
+    {% if client_profile %}
+        <h2>
+            {{ client_profile.persona|default:"" }}
+        </h2>
+        <div>
+            {{ client_profile.bio|default:"" }}
+        </div>
+        <div>
+            {% with website=client_profile.website|default:"" %}
+                <a href="{{website}}">{{ website }}</a>
+            {% endwith %}
+        </div>
+        <br/>
+        <div>
+
+        </div>
+    {% endif %}
+{% endwith %}
+{% endblock %}
