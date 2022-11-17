@@ -1,14 +1,15 @@
 {
-	"title": "DjangoBagels DevContainer Settings",
-	"description": "",
 	"image": "",
 	
 	"customizations": {
     "vscode": {
-      "extensions": {
-		  [""]
-	  }
+      "extensions": [
+		"aaron-bond.better-comments",
+		"leodevbro.blockman",
+		"rogalmic.bash-debug",
+		"mads-hartmann.bash-ide-vscode"
+		]
     }
   },
-  "forwardPorts": [3000]
+  "forwardPorts": []
 }
