@@ -1,0 +1,1 @@
+# This is mostly just a temporary/placeholder file to stop VS Code from saying "Makefile Entrypoint Not Found" every time I open VS Code.

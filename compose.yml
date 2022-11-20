@@ -1,6 +1,6 @@
 services:
   site:
-    image: newspectrum/technovine
+    image: newspectrum/technovine:latest
 
   server:
     image: ubuntu:latest
