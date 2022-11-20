@@ -1,1 +1,5 @@
-FROM nginx:latest AS nginx
+FROM nginx:latest AS backend
+
+WORKDIR /backend/app
+COPY . .
+
