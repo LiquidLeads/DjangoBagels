@@ -1,0 +1,292 @@
+@import (css) "../../fonts/css-imports/google-fonts.css";
+@import (less) "./themes.less"
+
+
+
+@sizes: {
+	mobile: 320px;
+	tablet: 768px;
+	desktop: 1024px;
+	FHD-desktop: 1080px;
+	QHD-desktop: 1440px;
+	UHD-desktop: 2160px;
+}
+
+@shadows {
+	blurXLg: 		$blurLg * 2;
+	blurLg: 		$blurMed * 1.5;
+	blurMed: 		3;
+	blurSm: 		$blurMed * 0.5;
+	blurXSm: 		$blurSm * 0.5;
+	
+	colorDark: 		hsla(0, 0%, 0%, 0.8);
+	colorMed: 		lighten($colorDark, 30%);
+	colorLight: 	lighten($colorMed, 30%);
+	
+	xLgOSet: 		$lgOSet * 2;
+	lgOSet: 		$medOSet * 1.5;
+	medOSet: 		1;
+	smOSet: 		$medOSet * 0.5;
+	xSmOSet: 		$smOSet * 0.5;
+	
+	xLgDist: 		$lgDist * 2;
+	lgDist: 		$medDist * 1.5;
+	medDist: 		1;
+	smDist: 		$medDist * 0.5;
+	xSmDist: 		$smDist * 0.5;
+	
+	xLgShadow: 		$xLgOSet, $xLgOSet, $blurXLg, $xLgDist;
+	lgShadow: 		$lgOSet, $lgOSet, $blurLg, $lgDist;
+	medShadow: 		$medOSet, $medOSet, $blurMed, $medDist;
+	smShadow: 		$smOSet, $smOSet, $blurSm, $smDist;
+	xSmShadow: 		$xSmOSet, $xSmOSet, $blurXSm, $xSmDist;
+}
+
+@styles: {
+//★ Rounded Corners
+	corners-sm: 	10px;
+	corners-lg: 	20px;
+	/*- property name: 'border-radius'
+	  - Usage:
+		  ? 'border-radius: @styles[corners-sm];'
+	  - Output:
+		  ? 'border-radius: 10px;' 
+		  ? Adds rounded corners to the container */
+}
+
+
+
+//★ Theme Maps
+#theme.dark {
+	.colors(bg) {
+		base: 			hsla(0, 0%, 10%, 1.0);
+		mainCont: 		lighten($base, 30%);
+		basicDiv: 		lighten($mainCont, 30%);
+		headCont: 		lighten($basicDiv, 30%);
+		codeTerm: 		hsla(205, 100%, 10%, 1.0);
+	}
+	.cont(headers) {
+		margins: 		8.33%;
+		paddingTop:		0.3em;
+		paddingSide:	1em;
+		paddingBottom:	0.5em;
+		corners: 		20px;
+		shadowColor: 	hsla(0, 0%, 0%, 0.8);
+		boxOutShadow: 	1 1 3 $shadowColor;
+		boxInShadow: 	1 1 3 $shadowColor inset;
+	}
+	.text(headers) {
+		titles: 		hsla(0, 0%, 100%, 1.0);
+		subTitles: 		darken($titles, 10%);
+		subText: 		darken($subTitles, 10%);
+	}
+	
+	
+	
+	.cont(body) {
+		margins: 		8.33%;
+	}
+	.text(body) {
+		headers: 	hsla(205, 75%, 90%, 1.0);
+		subHeaders: darken($headers, 10%)
+		para: 		hsla(0, 0%, 85%, 1.0);
+		subText: 	darken($para, 20%);
+	}
+	.cont(main) {
+		sidePadding: 	8.33%;
+		topPadding: 	1em;
+	}
+	.cont(code) {
+		borderColor: 	hsla(195, 14%, 39%, 1);
+		shadowColor: 	hsla(0, 0%, 0%, 0.9)
+		termBorder: 	1.5px solid $borderColor;
+		corners: 		10px;
+		innerShadow: 	1px 1px 3px $shadowColor inset;
+		consolePadd: 	0.5em;
+		termAttach: 	fixed;
+		codeAttach: 	scroll;
+		lineHeight: 	2em;
+	}
+}
+
+/*
+
+.terminal {
+	background-color: hsla(200, 100%, 5%, 1);
+	background-position: left;
+	background-size: auto 100px;
+	background-attachment: fixed;
+	border: 1.5px solid hsla(195, 14%, 39%, 1);
+	border-radius: 10px;
+	box-shadow: 1px 1px 2px hsla(0, 0%, 5%, 1) inset;
+	// margin-left: 10px;
+	// margin-right: 10px;
+	padding: 5px;
+	& .shell {
+		background-attachment: scroll;
+		font-family: "Fira Code", monospace;
+		font-size: 10px;
+		font-weight: 400;
+		// color: hsla(0,0%,90%,1.00);
+	}
+}
+
+
+*/
+
+
+
+
+#theme.light {
+	.colors(bg) {
+		base: 			hsla(0, 0%, 85%, 1.0);
+		mainCont: 		darken($base, 30%);
+		basicDiv: 		darken($mainCont, 30%);
+		headCont: 		darken($basicDiv, 30%);
+	}
+	.cont(headers) {
+		margins: 		8.33%;
+		paddingTop:		0.3em;
+		paddingSide:	1em;
+		paddingBottom:	0.5em;
+		corners: 		20px;
+		shadowColor: 	hsla(0, 0%, 0%, 0.8);
+		boxOutShadow: 	1 1 3 $shadowColor;
+		boxInShadow: 	1 1 3 $shadowColor inset;
+	}
+	.text(headers) {
+		titles: 		hsla(0, 0%, 0%, 1.0);
+		subTitles: 		lighten($titles, 10%);
+		subText: 		lighten($subTitles, 10%);
+	}
+}
+
+
+
+
+
+//★ Font Maps
+#fonts.head {
+	.families(title) {
+		titles: 		"Red Hat Display", sans-serif;
+		subTitles: 		"Assistant", sans-serif;
+		subText: 		"Assistant", sans-serif;
+	}
+	.properties(title) {
+		titleSize: 		2.5rem;
+		subTitleSize: 	1.5rem;
+		titleWeight: 	500;
+	}
+	.styles(title) {
+		shadowColor: 	hsla(0, 0%, 0%, 0.8);
+		titleShadow: 	1 1 3 3 $shadowColor;
+	}
+}
+
+#fonts.body {
+	.families(headers) {
+		titles: 		"Red Hat Display", sans-serif;
+		subTitles: 		"Assistant", sans-serif;
+		subText: 		"Assistant", sans-serif;
+	}
+	.properties(headers) {
+		titleSize: 		3rem;
+		subTitleSize: 	$titleSize * 0.8;
+		titleWeight: 	500;
+		subTitleWeight:	400;
+		subTitleMargin: -1em;
+	}
+	.styles(headers) {
+		shadowColor: 	hsla(0, 0%, 0%, 0.8);
+		hShadow: 	0.75 0.75 2.5 2 $shadowColor;
+	}
+	
+	// ===========================
+	
+	.families(body) {
+		headers: 		"Red Hat Display", sans-serif;
+		subHeaders: 	"Assistant", sans-serif;
+		para: 			"Assistant", sans-serif;
+		subText: 		"Assistant", sans-serif;
+		code: 			"Fira Code", monospace;
+	}
+	.properties(body) {
+		//- Header Settings
+		headerSize: 	2rem;
+		subHeaderSize: 	$titleSize * 0.8;
+		HeaderWeight: 	500;
+		subTitleWeight:	400;
+		subTitleMargin: -1em;
+		
+		//- Paragraph Settings
+		paraSize: 		1rem;
+		paraWeight: 	400;
+		
+		//- Code Settings
+		codeSize: 		0.8rem;
+		codeWeight: 	500;
+	}
+	.styles(body) {
+		shadowColor: 	hsla(0, 0%, 0%, 0.8);
+		hShadow: 		0.75 0.75 2.5 2 $shadowColor;
+	}
+}
+
+
+
+
+.headContainer {
+	@properties: #theme.dark.cont(headers);
+	@fonts: #fonts.body.families(headers);
+	@text: #fonts.body.properties(headers);
+	@txtColors: #theme.dark.text(headers);
+	@txtStyles: #fonts.body.styles(headers);
+	margin-left: @properties[margins];
+	margin-right: @properties[margins];
+	& header {
+		padding-top: @properties[paddingTop];
+		padding-left: @properties[paddingSide];
+		padding-right: @properties[paddingSide];
+		padding-bottom: @properties[paddingBottom];
+		& h1 {
+			color: @txtColors[titles];
+			font-family: @fonts[titles];
+			font-size: @text[titleSize];
+			font-weight: @text[titleWeight];
+		}
+		& h2 {
+			color: @txtColors[subTitles];
+			font-family: @fonts[subTitles];
+			font-size: @text[subTitleSize];
+			font-weight: @text[subTitleWeight];
+			margin-top: @text[subTitleMargin];
+		}
+	}
+}
+
+
+
+
+body {
+	@colorsBG: #theme.dark.colors(bg);
+	@body: #theme.dark.cont(body);
+	@mainCont: #theme.dark.cont(main);
+	@fonts: #fonts.body.families(body);
+	@text: #fonts.body.properties(body);
+	@txtColors: #theme.dark.text(body);
+	@txtStyles: #fonts.body.styles(body);
+	background-color: @colorsBG[base];
+	background-size: cover;
+	& h1, h2, h3, h4 {
+		font-family: @fonts[headers];
+		color: @txtColors[headers];
+	}
+	
+}
+
+
+
+
+
+
+

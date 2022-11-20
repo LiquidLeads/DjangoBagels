@@ -1,0 +1,84 @@
+//★ Theme Maps
+#theme.dark {
+	.colors(bg) {
+		base: 			hsla(0, 0%, 10%, 1.0);
+		mainCont: 		lighten($base, 10%);
+		basicDiv: 		lighten($mainCont, 10%);
+		headCont: 		lighten($basicDiv, 10%);
+		codeTerm: 		hsla(205, 100%, 10%, 1.0);
+	}
+	
+	
+//★ Page Header
+	.cont(headers) {
+		margins: 		8.33%;
+		paddingTop:		5px;
+		paddingSide:	4.16%;
+		paddingBottom:	1px;
+		corners: 		20px;
+		shadowColor: 	hsla(0, 0%, 0%, 0.8);
+		boxOutShadow: 	1 1 3 $shadowColor;
+		boxInShadow: 	1 1 3 $shadowColor inset;
+	}
+	.text(headers) {
+		titles: 		hsla(0, 0%, 100%, 1.0);
+		subTitles: 		darken($titles, 5%);
+		subText: 		darken($subTitles, 5%);
+	}
+	
+
+//★ Main Body
+	.cont(body) {
+		margins: 		8.33%;
+	}
+	.text(body) {
+		headers: 		hsla(205, 75%, 90%, 1.0);
+		subHeaders: 	darken($headers, 10%);
+		para: 			hsla(0, 0%, 85%, 1.0);
+		subText: 		darken($para, 20%);
+	}
+	.cont(main) {
+		sidePadding: 	8.33%;
+		topPadding: 	1em;
+	}
+	.cont(code) {
+		borderColor: 	hsla(195, 14%, 39%, 1);
+		shadowColor: 	hsla(0, 0%, 0%, 0.9);
+		termBorder: 	1.5px solid $borderColor;
+		corners: 		10px;
+		innerShadow: 	1px 1px 3px $shadowColor inset;
+		consolePadd: 	0.5em;
+		termAttach: 	fixed;
+		codeAttach: 	scroll;
+		lineHeight: 	2em;
+	}
+}
+
+
+
+
+
+
+#theme.light {
+	.colors(bg) {
+		base: 			hsla(0, 0%, 85%, 1.0);
+		mainCont: 		darken($base, 30%);
+		basicDiv: 		darken($mainCont, 30%);
+		headCont: 		darken($basicDiv, 30%);
+	}
+	.cont(headers) {
+		margins: 		8.33%;
+		paddingTop:		0.3em;
+		paddingSide:	1em;
+		paddingBottom:	0.5em;
+		corners: 		20px;
+		shadowColor: 	hsla(0, 0%, 0%, 0.8);
+		boxOutShadow: 	1 1 3 $shadowColor;
+		boxInShadow: 	1 1 3 $shadowColor inset;
+	}
+	.text(headers) {
+		titles: 		hsla(0, 0%, 0%, 1.0);
+		subTitles: 		lighten($titles, 10%);
+		subText: 		lighten($subTitles, 10%);
+	}
+}

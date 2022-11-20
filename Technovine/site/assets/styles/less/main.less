@@ -1,112 +1,57 @@
 @import (css) "../../fonts/css-imports/google-fonts.css";
-
-//★ Colors
-	//- Backgrounds
-		@pageBG: 			hsla(0, 0%, 10%, 1.0);
-		@headBG: 			lighten(@pageBG, 50%);
-		@containerBG: 		lighten(@pageBG, 30%);
-		@divBG: 			lighten(@containerBG, 30%);
-
-	//- Text Colors
-		@defaultText: 		hsla(0, 0%, 85%, 1.0);
-		@headFont-01: 		hsla(0, 0%, 100%, 1.0);
+@import (less) "./themes.less";
+@import (less) "./font-maps.less";
 
 
+.headContainer {
+	@colorsBG: #theme.dark.colors(bg);
+	@properties: #theme.dark.cont(headers);
+	@fonts: #fonts.body.families(headers);
+	@text: #fonts.body.properties(headers);
+	@txtColors: #theme.dark.text(headers);
+	@txtStyles: #fonts.body.styles(headers);
+	margin-left: @properties[margins];
+	margin-right: @properties[margins];
+	background-color: @colorsBG[headCont];
+	& header {
+		padding-top: @properties[paddingTop];
+		padding-left: @properties[paddingSide];
+		padding-right: @properties[paddingSide];
+		padding-bottom: @properties[paddingBottom];
+		& h1 {
+			color: @txtColors[titles];
+			font-family: @fonts[titles];
+			font-size: @text[titleSize];
+			font-weight: @text[titleWeight];
+		}
+		& h2 {
+			color: @txtColors[subTitles];
+			font-family: @fonts[subTitles];
+			font-size: @text[subTitleSize];
+			font-weight: @text[subTitleWeight];
+			margin-top: @text[subTitleMargin];
+		}
+	}
+}
 
-//★ Fonts
-	//- 'Head Container' Fonts
-		@hTitleFont: 		"Red Hat Display", sans-serif;
-		@hSubtitleFont: 	"Assistant", sans-serif;
-		@hSubtextFont: 		"Assistant", sans-serif;
-
-	//- Body Fonts
-		@titleFont: 	"Red Hat Display", sans-serif;
-		@subtitleFont: 	"Assistant", sans-serif;
-		@subtextFont: 	"Assistant", sans-serif;
-		@paraFont: 		"Assistant", sans-serif;
-		@codeFont: 		"Fira Code", monospace;
-
-
-//================================================================
 
 
 
 body {
-	background-color: @pageBG;
+	@colorsBG: #theme.dark.colors(bg);
+	@body: #theme.dark.cont(body);
+	@mainCont: #theme.dark.cont(main);
+	@fonts: #fonts.body.families(body);
+	@text: #fonts.body.properties(body);
+	@txtColors: #theme.dark.text(body);
+	@txtStyles: #fonts.body.styles(body);
+	background-color: @colorsBG[base];
 	background-size: cover;
-	color: @paraFont;
-}
-
-.headContainer() {
-	header {
-		color: black;
+	& h1, h2, h3, h4 {
+		font-family: @fonts[headers];
+		color: @txtColors[headers];
+	}
+	& .terminal {
+		
 	}
 }
-
-
-
-
-
-
-
-
-/* 
-#colors {
-	.dark() {
-		.bg() {
-			.page() {
-				@pageBG: hsla(0, 0%, 10%, 1.0);
-				background-color: @pageBG;
-				background-size: cover;
-			}
-			.head() {
-				@headBG: lighten(@pageBG, 50%);
-				background-color: @headBG;
-			}
-			.container() {
-				@containerBG: lighten(@pageBG, 30%);
-				background-color: @containerBG;
-			}
-			.div() {
-				@divBG: lighten(@containerBG, 30%);
-				background-color: @divBG;
-			}
-		}
-		.fonts() {
-			@defaultText: 		hsla(0, 0%, 85%, 1.0);
-			@headFont-01: 		hsla(0, 0%, 100%, 1.0);
-		}
-	}
-	
-	.light() {
-		.bg() {
-			@pageBG: 		hsla();
-			@headBG: 		hsla();
-			@containerBG: 	hsla();
-			@divBG: 		hsla();
-		}
-		.fonts() {
-			@default: 		hsla(0, 0%, 7%, 1.0);
-			@headFont-01: 	hsla(0, 0%, 0%, 1.0);
-		}
-	}
-}
-
-
- #fonts {
-	.families() {
-		.head() {
-			@titleFont: 	"Red Hat Display", sans-serif;
-			@subtitleFont: 	"Assistant", sans-serif;
-			@subtextFont: 	"Assistant", sans-serif;
-		}
-		.body() {
-			@titleFont: 	"Red Hat Display", sans-serif;
-			@subtitleFont: 	"Assistant", sans-serif;
-			@subtextFont: 	"Assistant", sans-serif;
-			@paraFont: 		"Assistant", sans-serif;
-			@codeFont: 		"Fira Code", monospace;
-		}
-	}
-}
-*/

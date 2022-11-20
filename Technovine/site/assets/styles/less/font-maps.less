@@ -1,0 +1,66 @@
+//★ Font Maps
+#fonts.head {
+	.families(title) {
+		titles: 		"Red Hat Display", sans-serif;
+		subTitles: 		"Assistant", sans-serif;
+		subText: 		"Assistant", sans-serif;
+	}
+	.properties(title) {
+		titleSize: 		2.5rem;
+		subTitleSize: 	1.5rem;
+		titleWeight: 	500;
+	}
+	.styles(title) {
+		shadowColor: 	hsla(0, 0%, 0%, 0.8);
+		titleShadow: 	1 1 3 3 $shadowColor;
+	}
+}
+
+#fonts.body {
+	.families(headers) {
+		titles: 		"Red Hat Display", sans-serif;
+		subTitles: 		"Assistant", sans-serif;
+		subText: 		"Assistant", sans-serif;
+	}
+	.properties(headers) {
+		titleSize: 		2.5rem;
+		subTitleSize: 	$titleSize * 0.8;
+		titleWeight: 	500;
+		subTitleWeight:	400;
+		subTitleMargin: -1.2em;
+	}
+	.styles(headers) {
+		shadowColor: 	hsla(0, 0%, 0%, 0.8);
+		hShadow: 	0.75 0.75 2.5 2 $shadowColor;
+	}
+	
+	// ===========================
+	
+	.families(body) {
+		headers: 		"Red Hat Display", sans-serif;
+		subHeaders: 	"Assistant", sans-serif;
+		para: 			"Assistant", sans-serif;
+		subText: 		"Assistant", sans-serif;
+		code: 			"Fira Code", monospace;
+	}
+	.properties(body) {
+		//- Header Settings
+		headerSize: 	2rem;
+		subHeaderSize: 	$headerSize * 0.8;
+		HeaderWeight: 	500;
+		subTitleWeight:	400;
+		subTitleMargin: -1em;
+		
+		//- Paragraph Settings
+		paraSize: 		1rem;
+		paraWeight: 	400;
+		
+		//- Code Settings
+		codeSize: 		0.8rem;
+		codeWeight: 	500;
+	}
+	.styles(body) {
+		shadowColor: 	hsla(0, 0%, 0%, 0.8);
+		hShadow: 		0.75 0.75 2.5 2 $shadowColor;
+	}
+}

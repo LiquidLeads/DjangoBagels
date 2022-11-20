@@ -1,0 +1,58 @@
+#colors {
+	.dark() {
+		.bg() {
+			.page() {
+				@pageBG: hsla(0, 0%, 10%, 1.0);
+				background-color: @pageBG;
+				background-size: cover;
+			}
+			.head() {
+				@headBG: lighten(@pageBG, 50%);
+				background-color: @headBG;
+			}
+			.container() {
+				@containerBG: lighten(@pageBG, 30%);
+				background-color: @containerBG;
+			}
+			.div() {
+				@divBG: lighten(@containerBG, 30%);
+				background-color: @divBG;
+			}
+		}
+		.fonts() {
+			@defaultText: 		hsla(0, 0%, 85%, 1.0);
+			@headFont-01: 		hsla(0, 0%, 100%, 1.0);
+		}
+	}
+	
+	.light() {
+		.bg() {
+			@pageBG: 		hsla();
+			@headBG: 		hsla();
+			@containerBG: 	hsla();
+			@divBG: 		hsla();
+		}
+		.fonts() {
+			@default: 		hsla(0, 0%, 7%, 1.0);
+			@headFont-01: 	hsla(0, 0%, 0%, 1.0);
+		}
+	}
+}
+
+
+ #fonts {
+	.families() {
+		.head() {
+			@titleFont: 	"Red Hat Display", sans-serif;
+			@subtitleFont: 	"Assistant", sans-serif;
+			@subtextFont: 	"Assistant", sans-serif;
+		}
+		.body() {
+			@titleFont: 	"Red Hat Display", sans-serif;
+			@subtitleFont: 	"Assistant", sans-serif;
+			@subtextFont: 	"Assistant", sans-serif;
+			@paraFont: 		"Assistant", sans-serif;
+			@codeFont: 		"Fira Code", monospace;
+		}
+	}
+}

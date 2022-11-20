@@ -20,68 +20,40 @@
 		  content=""
 		  />
 	<meta id="meta title"
-		  name="Technovine Homepage"
+		  name="title"
 		  content="Technovine Index"
 		  />
 	<meta id="page description"
 		  name="description"
 		  content="Technovine Website Homepage."
 		  />
-	
-<!--
-	★ Content Security Policy
-	<meta id="CSP"
-		  name="http-equiv"
-		  content=""
-
-/-->
 
 	<title id="page title">
 		Technovine | Home
 	</title>
 
+<!-- 
+★ CSP Definitions 
+	Content-Security-Policy:
+	default-src: 	'self'
+	img-src: 		'https'
+-->
 
 <!-- 
 	★ Import Stylesheets -->
 	<link id="main less stylesheet"
 		  rel="stylesheet/less"
-		  href="./assets/styles/less/main.less"
+		  href="../assets/styles/less/main.less"
 		  type="text/css"
 		  />
 	<link id="main scss stylesheet"
 		  rel="stylesheet/scss"
-		  href="./assets/styles/scss/main.scss"
+		  href="../assets/styles/scss/main.scss"
 		  type="text/css"
 		  />
-
-	
 </head>
 <body>
-
-
-<footer>
-
-
-<!-- 
-	★ Call 'Heavy' Scripts
-		-Placing these scripts at the end of the document body improves initial load time
-/-->
-	<script id="less.js (local)"
-			src="../assets/scripts/js/less.js">
-	</script>
-	<!-- 
-	<script id="less.js (external)"
-			src="https://cdn.jsdelivr.net/npm/less">
-	</script>
-	/-->
-
-
-	<script id="prism.js"
-			src="">
-	</script>
-</footer>
-</body>
-<section id="headSection">
+<section id="headSection" class="headContainer">
 	<header id="page header">
 		<h1 id="main title">
 			Technovine
@@ -93,4 +65,29 @@
 </section>
 
 
+<footer>
+	<section id="site footer">
+		<!-- To be filled near the end -->
+	</section>
+	<section id="body scripts">
+	<!-- 
+		★ Call 'Heavy' Scripts
+			-Placing these scripts at the end of the document body improves initial load time
+	/-->
+		<script id="less.js (local)"
+				src="../assets/scripts/js/less.js">
+		</script>
+		<!-- 
+		<script id="less.js (external)"
+				src="https://cdn.jsdelivr.net/npm/less">
+		</script>
+		/-->
+	
+	
+		<script id="prism.js"
+				src="">
+			</script>
+	</section>
+</footer>
+</body>
 </html>
