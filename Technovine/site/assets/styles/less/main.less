@@ -1,16 +1,80 @@
 @import (css) "../../fonts/css-imports/google-fonts.css";
 
+//★ Colors
+	//- Backgrounds
+		@pageBG: 			hsla(0, 0%, 10%, 1.0);
+		@headBG: 			lighten(@pageBG, 50%);
+		@containerBG: 		lighten(@pageBG, 30%);
+		@divBG: 			lighten(@containerBG, 30%);
+
+	//- Text Colors
+		@defaultText: 		hsla(0, 0%, 85%, 1.0);
+		@headFont-01: 		hsla(0, 0%, 100%, 1.0);
+
+
+
+//★ Fonts
+	//- 'Head Container' Fonts
+		@hTitleFont: 		"Red Hat Display", sans-serif;
+		@hSubtitleFont: 	"Assistant", sans-serif;
+		@hSubtextFont: 		"Assistant", sans-serif;
+
+	//- Body Fonts
+		@titleFont: 	"Red Hat Display", sans-serif;
+		@subtitleFont: 	"Assistant", sans-serif;
+		@subtextFont: 	"Assistant", sans-serif;
+		@paraFont: 		"Assistant", sans-serif;
+		@codeFont: 		"Fira Code", monospace;
+
+
+//================================================================
+
+
+
+body {
+	background-color: @pageBG;
+	background-size: cover;
+	color: @paraFont;
+}
+
+.headContainer() {
+	header {
+		color: black;
+	}
+}
+
+
+
+
+
+
+
+
+/* 
 #colors {
 	.dark() {
 		.bg() {
-			@pageBG: 		hsla(0, 0%, 10%, 1.0);
-			@headBG: 		lighten(@pageBG, 50%);
-			@containerBG: 	lighten(@pageBG, 30%);
-			@divBG: 		lighten(@containerBG, 30%);
+			.page() {
+				@pageBG: hsla(0, 0%, 10%, 1.0);
+				background-color: @pageBG;
+				background-size: cover;
+			}
+			.head() {
+				@headBG: lighten(@pageBG, 50%);
+				background-color: @headBG;
+			}
+			.container() {
+				@containerBG: lighten(@pageBG, 30%);
+				background-color: @containerBG;
+			}
+			.div() {
+				@divBG: lighten(@containerBG, 30%);
+				background-color: @divBG;
+			}
 		}
 		.fonts() {
-			@default: 		hsla(0, 0%, 85%, 1.0);
-			@headFont-01: 	hsla(0, 0%, 100%, 1.0);
+			@defaultText: 		hsla(0, 0%, 85%, 1.0);
+			@headFont-01: 		hsla(0, 0%, 100%, 1.0);
 		}
 	}
 	
@@ -29,7 +93,7 @@
 }
 
 
-#fonts {
+ #fonts {
 	.families() {
 		.head() {
 			@titleFont: 	"Red Hat Display", sans-serif;
@@ -45,3 +109,4 @@
 		}
 	}
 }
+*/
