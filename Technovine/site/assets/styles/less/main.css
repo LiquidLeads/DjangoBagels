@@ -1,66 +1,39 @@
 @import "../../fonts/css-imports/google-fonts.css";
+.headContainer {
+  margin-left: 8.33%;
+  margin-right: 8.33%;
+  background-color: hsl(0, 0%, 40%);
+}
+.headContainer header {
+  padding-top: 5px;
+  padding-left: 4.16%;
+  padding-right: 4.16%;
+  padding-bottom: 1px;
+}
+.headContainer header h1 {
+  color: hsl(0, 0%, 100%);
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+.headContainer header h2 {
+  color: hsl(0, 0%, 95%);
+  font-family: "Assistant", sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  margin-top: -1.2em;
+}
 body {
   background-color: hsl(0, 0%, 10%);
   background-size: cover;
-  color: "Assistant", sans-serif;
 }
-/* 
-#colors {
-	.dark() {
-		.bg() {
-			.page() {
-				@pageBG: hsla(0, 0%, 10%, 1.0);
-				background-color: @pageBG;
-				background-size: cover;
-			}
-			.head() {
-				@headBG: lighten(@pageBG, 50%);
-				background-color: @headBG;
-			}
-			.container() {
-				@containerBG: lighten(@pageBG, 30%);
-				background-color: @containerBG;
-			}
-			.div() {
-				@divBG: lighten(@containerBG, 30%);
-				background-color: @divBG;
-			}
-		}
-		.fonts() {
-			@defaultText: 		hsla(0, 0%, 85%, 1.0);
-			@headFont-01: 		hsla(0, 0%, 100%, 1.0);
-		}
-	}
-	
-	.light() {
-		.bg() {
-			@pageBG: 		hsla();
-			@headBG: 		hsla();
-			@containerBG: 	hsla();
-			@divBG: 		hsla();
-		}
-		.fonts() {
-			@default: 		hsla(0, 0%, 7%, 1.0);
-			@headFont-01: 	hsla(0, 0%, 0%, 1.0);
-		}
-	}
+body h1,
+body h2,
+body h3,
+body h4 {
+  font-family: "Red Hat Display", sans-serif;
+  color: hsl(205, 75%, 90%);
 }
-
-
- #fonts {
-	.families() {
-		.head() {
-			@titleFont: 	"Red Hat Display", sans-serif;
-			@subtitleFont: 	"Assistant", sans-serif;
-			@subtextFont: 	"Assistant", sans-serif;
-		}
-		.body() {
-			@titleFont: 	"Red Hat Display", sans-serif;
-			@subtitleFont: 	"Assistant", sans-serif;
-			@subtextFont: 	"Assistant", sans-serif;
-			@paraFont: 		"Assistant", sans-serif;
-			@codeFont: 		"Fira Code", monospace;
-		}
-	}
+body .terminal {
+  background-color: black;
 }
-*/
