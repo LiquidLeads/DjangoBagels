@@ -1,0 +1,13 @@
+pipenv==2022.10.12
+pyOpenSSL==22.1.0
+cryptography==38.0.3
+jupyter==1.0.0      
+jupyter_client==7.4.7
+jupyter-console==6.4.4
+jupyter_core==5.0.0
+json5==0.9.8
+jsonschema==4.7.1
+Markdown==3.4.1
+numpy==1.23.4
+websocket-client==1.4.2
+Django==4.0.6

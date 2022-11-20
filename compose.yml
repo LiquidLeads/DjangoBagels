@@ -1,12 +1,40 @@
 services:
   site:
-    image: newspectrum/technovine:latest
+    image: "newspectrum/technovine:latest"
+    depends_on:
+      - db
+      - backend
+    networks:
+      - frontend
+      - admin
+    volumes:
+      - site-storage:/var/site/storage
+      - db-data:/var/db/data
 
   server:
-    image: ubuntu:latest
-  
+    image: "ubuntu:latest"
+    networks:
+      - backend
+      - frontend
+      - admin
+    volumes:
+      - server-storage:/var/server/storage
+      - server-admin:/var/server/admin
+      - db-data:/var/db/data
+      - site-storage:/var/site/storage
+        
   db:
-    image: mysql:latest
+    image: "mysql:latest"
+    depends_on:
+      - backend
+      - server
+    networks:
+      - backend
+      - admin
 
   backend:
-    image: nginx:latest
+    image: "nginx:latest"
+    networks:
+      - backend
+      - frontend
+      - admin
