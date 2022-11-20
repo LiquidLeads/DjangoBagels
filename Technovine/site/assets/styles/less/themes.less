@@ -1,4 +1,4 @@
-//★ Theme Maps
+//★ Dark Theme Map
 #theme.dark {
 	.colors(bg) {
 		base: 			hsla(0, 0%, 10%, 1.0);
@@ -9,7 +9,7 @@
 	}
 	
 	
-//★ Page Header
+	//- Page Header
 	.cont(headers) {
 		margins: 		8.33%;
 		paddingTop:		5px;
@@ -27,7 +27,7 @@
 	}
 	
 
-//★ Main Body
+	//- Main Body
 	.cont(body) {
 		margins: 		8.33%;
 	}
@@ -56,21 +56,23 @@
 
 
 
+// ===========================
 
 
-
+//★ Light Theme Map
 #theme.light {
 	.colors(bg) {
-		base: 			hsla(0, 0%, 85%, 1.0);
-		mainCont: 		darken($base, 30%);
-		basicDiv: 		darken($mainCont, 30%);
-		headCont: 		darken($basicDiv, 30%);
+		base: 			hsla(0, 0%, 90%, 1.0);
+		mainCont: 		darken($base, 10%);
+		basicDiv: 		darken($mainCont, 10%);
+		headCont: 		darken($basicDiv, 10%);
+		codeTerm: 		hsla(205, 100%, 10%, 1.0);
 	}
 	.cont(headers) {
 		margins: 		8.33%;
-		paddingTop:		0.3em;
-		paddingSide:	1em;
-		paddingBottom:	0.5em;
+		paddingTop:		5px;
+		paddingSide:	4.16%;
+		paddingBottom:	1px;
 		corners: 		20px;
 		shadowColor: 	hsla(0, 0%, 0%, 0.8);
 		boxOutShadow: 	1 1 3 $shadowColor;
@@ -78,7 +80,7 @@
 	}
 	.text(headers) {
 		titles: 		hsla(0, 0%, 0%, 1.0);
-		subTitles: 		lighten($titles, 10%);
-		subText: 		lighten($subTitles, 10%);
+		subTitles: 		lighten($titles, 5%);
+		subText: 		lighten($subTitles, 5%);
 	}
 }

@@ -4,12 +4,12 @@
 
 
 .headContainer {
-	@colorsBG: #theme.dark.colors(bg);
-	@properties: #theme.dark.cont(headers);
-	@fonts: #fonts.body.families(headers);
-	@text: #fonts.body.properties(headers);
-	@txtColors: #theme.dark.text(headers);
-	@txtStyles: #fonts.body.styles(headers);
+@colorsBG: #theme.dark.colors(bg);
+@properties: #theme.dark.cont(headers);
+@fonts: #fonts.body.families(headers);
+@text: #fonts.body.properties(headers);
+@txtColors: #theme.dark.text(headers);
+@txtStyles: #fonts.body.styles(headers);
 	margin-left: @properties[margins];
 	margin-right: @properties[margins];
 	background-color: @colorsBG[headCont];
@@ -35,16 +35,14 @@
 }
 
 
-
-
 body {
-	@colorsBG: #theme.dark.colors(bg);
-	@body: #theme.dark.cont(body);
-	@mainCont: #theme.dark.cont(main);
-	@fonts: #fonts.body.families(body);
-	@text: #fonts.body.properties(body);
-	@txtColors: #theme.dark.text(body);
-	@txtStyles: #fonts.body.styles(body);
+@colorsBG: #theme.dark.colors(bg);
+@body: #theme.dark.cont(body);
+@mainCont: #theme.dark.cont(main);
+@fonts: #fonts.body.families(body);
+@text: #fonts.body.properties(body);
+@txtColors: #theme.dark.text(body);
+@txtStyles: #fonts.body.styles(body);
 	background-color: @colorsBG[base];
 	background-size: cover;
 	& h1, h2, h3, h4 {
@@ -52,6 +50,6 @@ body {
 		color: @txtColors[headers];
 	}
 	& .terminal {
-		background-color: black;
+		background-color: @colorsBG[codeTerm];
 	}
 }
