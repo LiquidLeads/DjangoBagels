@@ -21,10 +21,11 @@ CMD [ "python", "$PyScriptts/build-test.py" ]
 
 FROM php:latest AS php
 
-ENV PhpDir="/dev/php/app"
+ENV PhpDir="/dev/php"
+ENV PhpAppDir="/dev/php/app"
 
-RUN mkdir -p -v ${PhpDir}
-WORKDIR ${PhpDir}
+RUN mkdir -p -v ${PhpAppDir}
+WORKDIR ${PhpAppDir}
 
 
 
