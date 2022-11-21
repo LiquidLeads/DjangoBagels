@@ -1,39 +1,106 @@
 services:
+  server:
+    privileged: true
+    image: "ubuntu:latest"
+    container_name: server
+    build:
+      context: "./Technovine/backend/server"
+      dockerfile: "Dockerfile"
+    cap_add:
+      - ALL
+    networks:
+      - backend
+      - frontend
+      - admin
+    volumes:
+#+  Server Data & Storage Volumes
+#-      Name: Server-Data
+      - type:       bind
+        source:     "Z:\\Technovine\\server\\data"
+        target:     /volumes/server-data
+        read_only:  false
+#-      Name: Server-Storage
+      - type:       bind
+        source:     "Z:\\Technovine\\server\\storage"
+        target:     /volumes/server-storage
+        read_only:  false
+#+  Site Data & Storage Volumes
+#-      Name: Site-Data
+      - type:       bind
+        source:     "Z:\\Technovine\\site\\data"
+        target:     /volumes/site-data
+        read_only:  false
+#-      Name: Site-Storage
+      - type:       bind
+        source:     "Z:\\Technovine\\site\\storage"
+        target:     /volumes/site-storage
+        read_only:  false
+#+  MySQL Database Data Volume
+#-      Name: DB-Data
+      - type:       bind
+        source:     "Z:\\Technovine\\db\\data"
+        target:     /volumes/db-data
+        read_only:  false
+    ports:
+      - 22
+      - 80
+      - 443
+      - 8080
+    command: ["bash"]
+  
+  tailscale:
+      privileged: true
+      hostname: tailscale   # This will become the tailscale device name
+      network_mode: "host"
+      container_name: tailscale
+      image: tailscale/tailscale:latest
+      volumes:
+          - "/opt/appdata/tailscale/var_lib:/var/lib"
+          # State data will be stored in this directory
+          - "/dev/net/tun:/dev/net/tun" 
+          # Required for tailscale to work
+      cap_add: # Required for tailscale to work
+        - net_admin
+        - sys_module
+      command: tailscaled
+      restart: unless-stopped
+
   site:
     image: "newspectrum/technovine:latest"
     build:
       dockerfile: "/Dockerfile"
     depends_on:
       - db
-      - backend
+      - nginx
     networks:
       - frontend
       - admin
     volumes:
-      - site-storage:/var/site/storage
-      - db-data:/var/db/data
-
-  server:
-    image: "ubuntu:latest"
-    build:
-      dockerfile: "./Technovine/backend/server/Dockerfile"
-    networks:
-      - backend
-      - frontend
-      - admin
-    volumes:
-      - server-storage:/var/server/storage
-      - server-admin:/var/server/admin
-      - db-data:/var/db/data
-      - site-storage:/var/site/storage
-    command: bash
+#+  Site Data & Storage Volumes
+#-      Name: Site-Data
+      - type:       bind
+        source:     "Z:\\Technovine\\site\\data"
+        target:     /volumes/site-data
+        read_only:  false
+#-      Name: Site-Storage
+      - type:       bind
+        source:     "Z:\\Technovine\\site\\storage"
+        target:     /volumes/site-storage
+        read_only:  false
+#+  MySQL Database Data Volume
+#-      Name: DB-Data
+      - type:       bind
+        source:     "Z:\\Technovine\\db\\data"
+        target:     /volumes/db-data
+        read_only:  false
+        
         
   db:
     image: "mysql:latest"
     command: '--default-authentication-plugin=mysql_native_password'
     restart: always
     depends_on:
-      - backend
+      - nginx
       - server
     networks:
       - backend
@@ -46,19 +113,23 @@ services:
     expose:
       - 3306
 
-  backend:
+  nginx:
     image: "nginx:latest"
     volumes:
       - type: bind
         source: ./proxy/nginx.conf
         target: /etc/nginx/conf.d/default.conf
         read_only: true
+      - type: bind
+        source: "Z:\\Technovine\\"
+        target: /volumes/site-data
+        read_only: false
     networks:
       - backend
       - frontend
       - admin
     ports:
-      - 80:80
+      - 80
 
 secrets:
   db-password:

@@ -1,10 +1,28 @@
 FROM python:latest AS python
 
-WORKDIR /usr/src/python/app
+ENV PyDir="/dev/python"
+ENV PyAppDir="/dev/python/app"
+ENV PyScripts="/dev/python/scripts"
 
-COPY requirements.txt ./
+RUN mkdir -p -v ${PyAppDir}
+
+WORKDIR ${PyAppDir}
+COPY "./requirements.txt" .
+
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
+WORKDIR ${PyScripts}
+COPY ./scripts/python/* .
 
-CMD [ "python", "./your-daemon-or-script.py" ]
+CMD [ "python", "$PyScriptts/build-test.py" ]
+
+
+# ===============================================
+
+FROM php:latest AS php
+
+ENV PhpDir="/dev/php/app"
+
+RUN mkdir -p -v ${PhpDir}
+WORKDIR ${PhpDir}
+
