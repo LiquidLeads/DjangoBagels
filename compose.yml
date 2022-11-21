@@ -3,15 +3,17 @@ services:
     privileged: true
     image: "ubuntu:latest"
     container_name: server
-    build:
-      context: "./Technovine/backend/server"
-      dockerfile: "Dockerfile"
     cap_add:
       - ALL
     networks:
       - backend
       - frontend
       - admin
+    links:
+      - "db:database"
+      - "tailscale:vpn"
+      - "nginx:webhost"
+      - "site:technovine"
     volumes:
 #+  Server Data & Storage Volumes
 #-      Name: Server-Data
@@ -46,6 +48,9 @@ services:
       - 80
       - 443
       - 8080
+    build:
+      context: "./Technovine/backend/server"
+      dockerfile: "Dockerfile"
     command: ["bash"]
   
   tailscale:
@@ -69,6 +74,7 @@ services:
     image: "newspectrum/technovine:latest"
     build:
       dockerfile: "/Dockerfile"
+    container_name: technovine
     depends_on:
       - db
       - nginx

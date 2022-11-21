@@ -26,3 +26,8 @@ ENV PhpDir="/dev/php/app"
 RUN mkdir -p -v ${PhpDir}
 WORKDIR ${PhpDir}
 
+
+
+# ===============================================
+
+FROM apache:latest AS apache
