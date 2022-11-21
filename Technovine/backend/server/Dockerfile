@@ -1,5 +1,17 @@
-FROM ubuntu:latest AS server
+FROM ubuntu:22.04 AS server
 LABEL authors="Richard Joubert"
+
+#▸ Set Admin Directories
+ENV ScriptsDir=/admin/scripts
+ENV LogsDir=/admin/logs
+
+RUN \
+	mkdir -p ${ScriptsDir} \
+	mkdir -p ${LogsDir}
+
+WORKDIR /admin/scripts
+RUN sudo . ./install-pwsh.sh
+
 
 COPY ./scripts/* /admin/scripts
 
@@ -19,12 +31,12 @@ RUN apt-get install \
 		git-lfs \
 		git-hub \
 		git-sizer \
+		curl \
 		openssh-client \
 		openssh-sftp-server \
 		openssh-server \
 		openssl
 
 
-WORKDIR /admin/scripts
-RUN sudo . build.sh
+RUN sudo . user-config.sh
 
