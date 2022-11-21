@@ -27,3 +27,4 @@ RUN apt-get install \
 
 WORKDIR /admin/scripts
 RUN sudo . build.sh
+
