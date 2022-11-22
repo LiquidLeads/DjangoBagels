@@ -43,15 +43,16 @@ Once I've finished tweaking the slew of required config files, the build will be
 
 | Property | Value |
 | :--- | :--- |
-| Main Image<br />Distribution | Python<br />`python:latest` |
-| Additional<br />Images | • PHP <br />`php:latest` <br /><br />• Apache <br />`apache:latest` |
+| Base Image<br />Distribustion | Image Name:<br />`technovine` <br />Build Reference:<br />`newspectrum/technovine:latest` |
+| Main Image<br />Version/Tag | Python<br />`python:latest` |
+| Additional<br />Images | • PHP <br />`php:latest` <br />• Apache <br />`apache:latest` |
 | Container Name | `technovine` |
-| Hostname | `technovine` |
+| Hostname | `technovine-site` |
 | Privileged | `false` |
-| Command | `["bash"]` |
-| Networks | • `backend`<br />• `frontend`<br />• `admin` |
-| Ports | • `22`<br />• `80`<br />• `443`<br />• `8080` |
-| Volumes | `../server-data`<br />`../server-storage`<br />`../site-data`<br />`../site-storage`<br />`../db-data` |
+| Command | `[""]` |
+| Networks | •`frontend`<br />• `admin` |
+| Ports | • `5050`<br />• `9000:9900`<br /> |
+| Volumes | `../site-data`<br />`../site-storage`<br />`../db-data` |
 
 
 
