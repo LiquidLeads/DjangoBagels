@@ -13,6 +13,7 @@ WORKDIR /admin/scripts
 RUN sudo . ./install-pwsh.sh
 
 
+
 COPY ./scripts/* /admin/scripts
 
 #? Expand Ubuntu into the full, User-Based installation

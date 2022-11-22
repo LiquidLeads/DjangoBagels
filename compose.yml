@@ -6,9 +6,11 @@ services:
     hostname:         lin-server
     privileged:       true
     build:
-      context:        "./Technovine/backend/server"
-      dockerfile:     "lin-server.dockerfile"
-    command: ["bash"]
+      context:        ./Technovine/backend/server
+      dockerfile:     lin-server.dockerfile
+    command: [
+        'bash'
+      ]
     cap_add:
       - ALL
     networks:
@@ -57,7 +59,9 @@ services:
     cap_add:
       - net_admin
       - sys_module
-    command: tailscaled
+    command: [
+        'tailscaled'
+      ]
     restart: unless-stopped
     volumes:
       - "/opt/appdata/tailscale/var_lib:/var/lib"
@@ -65,13 +69,13 @@ services:
 
 #★ Technovine Site Container
   site:
-    image:            "newspectrum/technovine:latest"
+    image:            newspectrum/technovine:latest
     container_name:   technovine
     hostname:         technovine
     privileged:       false
     build:
-      context: /.devcontainer
-      dockerfile: technovine.dockerfile
+      context:        /.devcontainer
+      dockerfile:     technovine.dockerfile
     depends_on:
       - db
       - webhost
@@ -99,10 +103,12 @@ services:
     hostname: 				techovine-db
     privileged:       false
     build:
-      context: /.devcontainer
-      dockerfile: technovine.dockerfile
+      context:        /.devcontainer
+      dockerfile:     database.dockerfile
     restart: 					always
-    command: '--default-authentication-plugin=mysql_native_password'
+    command: [
+        '--default-authentication-plugin=mysql_native_password'
+      ]
     depends_on:
       - webhost
       - server
@@ -124,8 +130,8 @@ services:
     hostname:         techovine-wh
     privileged:       false
     build:
-      context:      ""
-      dockerfile:   "nginx.dockerfile"
+      context:      /Technovine/backend/nginx
+      dockerfile:   nginx.dockerfile
     volumes:
       - type: 			bind
         source:     	"./proxy/nginx.conf"
