@@ -1,0 +1,14 @@
+services:
+  app:
+    image: image:latest
+        #- image:version
+        #?    "ubuntu:22.04"
+        #- image:tag
+        #?    "ubuntu:jammy-20221101"
+        #- source/image:version
+        #?    "webdevops/php-apache-dev:8.0"
+        #- source/image:tag
+        #?    "mcr.microsoft.com/windows/servercore:tsc2022"
+    container_name:   name
+    hostname:         network-alias
+    
