@@ -49,7 +49,7 @@ Due to the complicated, multi-image structure and the vast quantity of pre-coded
 | Main Image<br />Version/Tag | Python<br />`python:latest` |
 | Additional<br />Images | • PHP <br />`php:latest` <br />• Apache <br />`apache:latest` |
 | Container Name | `technovine` |
-| Hostname | `technovine-site` |
+| Hostname | `technovine-site-site` |
 | Privileged | `false` |
 | Command | `[""]` |
 | Networks | •`frontend`<br />• `admin` |
