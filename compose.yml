@@ -2,6 +2,8 @@ services:
 #★ Linux Host/Admin Server
   server:
     image: ubuntu:22.04
+    labels:
+      - maintainer="rjoubert@nsd.team"
     container_name:   server
     hostname:         lin-server
     privileged:       true
@@ -86,13 +88,10 @@ services:
     networks:
       - frontend
       - admin
+    expose:
+      - 9000
     ports:
       - 5050
-      - 9000:9900
-      - target: 80
-        published: 8080
-        protocol: tcp
-        mode: host
     volumes:
       - type: 			bind
         source:       "Z:\\Docker\\DevContainers\\Technovine\\site\\data"

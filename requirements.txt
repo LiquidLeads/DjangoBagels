@@ -1,4 +1,7 @@
 pipenv==2022.10.12
+Django==4.0.6
+php==1.2.1
+django_php==0.1
 pyOpenSSL==22.1.0
 cryptography==38.0.3
 jupyter==1.0.0      
@@ -10,4 +13,3 @@ jsonschema==4.7.1
 Markdown==3.4.1
 numpy==1.23.4
 websocket-client==1.4.2
-Django==4.0.6
