@@ -43,6 +43,8 @@ body {
 @colorsBG: 		#theme.dark.colors(bg);
 @body: 			#theme.dark.cont(body);
 @mainCont: 		#theme.dark.cont(main);
+@termCont:		#theme.dark.cont(term);
+@codeCont:		#theme.dark.cont(code);
 @fonts: 		#fonts.body.families(body);
 @text: 			#fonts.body.properties(body);
 @txtColors:		#theme.dark.text(body);
@@ -57,6 +59,14 @@ body {
 	}
 	& .terminal {
 		background-color: @colorsBG[codeTerm];
-		
+		background-attachment: @termCont[termAttach];
+		border: @termCont[termBorder];
+		border-radius: @termCont[corners];
+		box-shadow: @termCont[innerShadow];
+		& code {
+			padding: @codeCont[consolePadd];
+			background-attachment: @codeCont[codeAttach];
+			line-height: @codeCont[lineHeight];
+		}
 	}
 }
