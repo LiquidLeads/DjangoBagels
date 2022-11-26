@@ -43,15 +43,17 @@
 		topPadding: 	1em;
 	}
 	.cont(code) {
-		borderColor: 	hsla(195, 14%, 39%, 1);
-		shadowColor: 	hsla(0, 0%, 0%, 0.9);
-		termBorder: 	1.5px solid $borderColor;
-		corners: 		10px;
-		innerShadow: 	1px 1px 3px $shadowColor inset;
 		consolePadd: 	0.5em;
-		termAttach: 	fixed;
 		codeAttach: 	scroll;
 		lineHeight: 	2em;
+	}
+	.cont(term) {
+		termAttach: 	fixed;
+		termBorder: 	1.5px solid $borderColor;
+		innerShadow: 	1px 1px 3px $shadowColor inset;
+		borderColor: 	hsla(195, 14%, 39%, 1);
+		shadowColor: 	hsla(0, 0%, 0%, 0.9);
+		corners: 		10px;
 	}
 }
 
