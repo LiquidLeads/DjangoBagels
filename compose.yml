@@ -76,13 +76,12 @@ services:
 
 #★ Technovine Site Container
   site:
-    image:            newspectrum/technovine:latest
-    container_name:   technovine
-    hostname:         technovine-site
-    privileged:       false
     build:
       context:        "/.devcontainer"
       dockerfile:     "technovine.dockerfile"
+    container_name:   technovine
+    hostname:         technovine-site
+    privileged:       false
     depends_on:
       - db
       - webhost
