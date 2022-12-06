@@ -1,17 +1,3 @@
-FROM 'httpd:latest' AS webserver
-LABEL maintainer="rjoubert@nsd.team"
-
-CMD ["bash"]
-
-RUN apt-get update && apt-get upgrade
-RUN \
-  apt-get install \
-    
-
-
-
-# ===============================================
-
 FROM webdevops/php:8.0
 LABEL maintainer="rjoubert@nsd.team"
 
