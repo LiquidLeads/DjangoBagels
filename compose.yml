@@ -184,7 +184,7 @@ networks:
 
 secrets:
   db-password:
-    file: "./Technovine/backend/db"
+    file: "./Technovine/backend/db/db-password.txt"
 #
 #
 
