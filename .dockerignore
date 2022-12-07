@@ -1,4 +1,4 @@
-# Templates
+# Folders
 /.devcontainer/templates/*
-
+/.old/Dockerfile
 *.tmp
