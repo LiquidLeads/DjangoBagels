@@ -26,6 +26,9 @@
 ##### h5
 
 
+
+
+
 <br /><br />
 
  ---
@@ -38,10 +41,8 @@ Line breaks use the HTML `break` tag and, like most elements, must be inserted w
 
 ## Line Breaks
 
-### Syntax
-A single line break
-
- ```markdown
+### Syntax: A Single Line Break
+```markdown
 ...content.
 
 <br />
@@ -49,10 +50,9 @@ A single line break
 #### New Section
 
 Content.
- ```
+```
 
 ### Output
-
 > ...content.
 > 
 > <br />
@@ -61,4 +61,26 @@ Content.
 > 
 > Content.
 
+
+<br />
+
+### Syntax: A Double Line Break
+```markdown
+...content.
+
+<br /><br />
+
+#### New Section
+
+Content.
+```
+
+### Output
+> ...content.
+> 
+> <br /><br />
+> 
+> #### New Section
+> 
+> Content.
 
