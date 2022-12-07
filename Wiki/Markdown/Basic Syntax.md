@@ -1,9 +1,11 @@
 # Table of Contents
 
 - [Headers](#headers)
-- [Dividers & Breaks](#dividers--breaks)
-	- [Line Breaks](#line-breaks)
-- [Lists](#lists)
+- [Text Formatting]()
+
+<br /><br /><br />
+
+---
 
 
 # Headers
@@ -39,181 +41,86 @@
 
 <br /><br /><br />
 
- ---
-
-# Dividers & Breaks
-
-Line breaks use the HTML `break` tag and, like most elements, must be inserted with a blank line on top and bottom of the break.
-
-
-
-## Line Breaks
-
-### Syntax: A Single Line Break
-```markdown
-...content.
-
-<br />
-
-#### New Section
-
-Content.
-```
-
-### Output
-> ...content.
-> 
-> <br />
-> 
-> #### New Section
-> 
-> Content.
-
-
-
-<br /><br />
-
-### Syntax: A Double Line Break
-```markdown
-...content.
-
-<br /><br />
-
-#### New Section
-
-Content.
-```
-
-### Output
-> ...content.
-> 
-> <br /><br />
-> 
-> #### New Section
-> 
-> Content.
-
-
-
-<br /><br />
-
-### Syntax: A Divider + Line Break
-```markdown
-...content.
-
-<br />
-
 ---
 
-#### New Section
+# Text Formatting
 
-Content.
+Basic text formatting, including:
+
+- __Bold__
+- *Italic*
+- `Code`
+
+## Bold & Italic Text
+
+Both __Bold__ *and* __Italic__ Text Styles can use any of the following:
+
+- Underscores `_`
+- Asterisks `*`
+- HTML Tags:
+    - `b` or `str`
+    - `i` or `em`
+
+
+Personally, I prefer to use a set of double-underscores `__Bold Text__` and a single set of asterisks for `*Italic Text*`. That way, when you combine them, you can tell what's going on (see the examples below).
+
+
+### Markdown Syntax
+```markdown
+#### Bold Text
+	- __Using Underscores__
+	- **Using Asterisks**
+
+#### Italic Text
+	- _Using Underscores_
+	- *Using Asterisks*
+
+#### Combo Text
+	- *Italic* __*Combo* Bold__
+```
+
+### HTML Syntax
+```html
+<h4>Bold Text</h4>
+	- <b>Using the 'Bold' Tag</b>
+	- <strong>Using the 'Strong' Tag</strong>
+
+<h4>Italic Text</h4>
+	- <i>Using the 'Italic' Tag</i>
+	- <em>Using the 'Emphasis' Tag</em>
+
+<h4>Combo Text</h4>
+	- <i>Italic <b>Combo</i> Bold</b>
 ```
 
 ### Output
-> ...content.
-> 
-> <br />
-> 
-> ---
-> 
-> #### New Section
-> 
-> Content.
 
-
-
-
+> <h4>Bold Text</h4>
+> - Markdown
+>     - __Using Underscores__
+>     - **Using Asterisks**
+> - HTML
+>     - <b>Using the 'Bold' Tag</b>
+>     - <strong>Using the 'Strong' Tag</strong>
+>
+> <h4>Italic Text</h4>
+> - Markdown
+>     - _Using Underscores_
+>     - *Using Asterisks*
+> - HTML
+>     - <i>Using the 'Italic' Tag</i>
+>     - <em>Using the 'Emphasis' Tag</em>
+>
+> <h4>Combo Text</h4>
+> - Markdown
+>     - *Italic* __*Combo* Bold__
+> - HTML
+>     - <i>Italic <b>Combo</i> Bold</b>
 
 
 <br /><br /><br />
 
 ---
 
-# Lists
 
-## Numbered Lists
-AKA "Ordered Lists"
-
-### Markdown Syntax
-```markdown
-1. First Item
-2. Second Item
-3. Third Item
-```
-
-### HTML Syntax
-```html
-<ol>
-	<li>
-		First Item
-	</li>
-	<li>
-		Second Item
-	</li>
-	<li>
-		Third Item
-	</li>
-</ol>
-```
-
-### Output
-
-> 1. First Item
-> 2. Second Item
-> 3. Third Item
-
-
-<br /><br />
-
-## Layered Lists
-Ordered Lists with Sub-Items
-
-### Markdown Syntax
-```markdown
-1. First Item
-	- Sub-Item
-2. Second Item
-	- Sub-Item
-		- Sub-Item
-3. Third Item
-```
-
-### HTML Syntax
-```html
-<ol>
-	<li>
-		First Item
-	</li>
-	<ul>
-		<li>
-			Sub-Item
-		</li>
-	</ul>
-	<li>
-		Second Item
-	</li>
-	<ul>
-		<li>
-			Sub-Item
-		</li>
-		<ul>
-			<li>
-				Sub-Item
-			</li>
-		</ul>
-	</ul>
-	<li>
-		Third Item
-	</li>
-</ol>
-```
-
-### Output
-> 1. First Item
-> 		- Sub-Item
-> 2. Second Item
->		- Sub-Item
->			- Sub-Item
-> 3. Third Item
 
