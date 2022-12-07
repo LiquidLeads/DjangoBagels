@@ -1,0 +1,4 @@
+# Templates
+/.devcontainer/templates/*
+
+*.tmp

@@ -1,5 +1,6 @@
 FROM ubuntu:22.04 AS server
 LABEL authors="Richard Joubert"
+LABEL maintainer="rjoubert@nsd.team"
 
 #▸ Set Admin Directories
 ENV ScriptsDir=/admin/scripts
@@ -10,10 +11,6 @@ RUN \
 	mkdir -p ${LogsDir}
 
 WORKDIR /admin/scripts
-RUN sudo . ./install-pwsh.sh
-
-
-
 COPY ./scripts/* /admin/scripts
 
 #? Expand Ubuntu into the full, User-Based installation
@@ -38,6 +35,12 @@ RUN apt-get install \
 		openssh-server \
 		openssl
 
+RUN . ./Bash/user-config.sh
+RUN . ./Bash/dev-dirs.sh
 
-RUN sudo . user-config.sh
+RUN . ./PowerShell/install-pwsh.sh
+RUN pwsh -File ./PowerShell/Update-Help.ps1
 
+
+ENTRYPOINT [ "bash", "--port", "22" ]
+CMD [ "bash", "--login" ]

@@ -14,7 +14,8 @@
 
 #- Install & (hopefully start) PowerShell
 	sudo apt-get install -y powershell
-	pwsh
+	pwsh -Command Write-Host "PowerSHell Installed Successfully"
+
 
 
 #? Direct Download URL:
