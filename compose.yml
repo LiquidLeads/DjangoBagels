@@ -33,23 +33,23 @@ services:
     volumes:
       - type: 			bind
         source:       "Z:\\Docker\\DevContainers\\Technovine\\server\\data"
-        target:       "/volumes/server-data"
+        target:       "/vol/server-data"
         read_only:    false
       - type: 			bind
         source:       "Z:\\Docker\\DevContainers\\Technovine\\server\\storage"
-        target:       "/volumes/server-storage"
+        target:       "/vol/server-storage"
         read_only:    false
       - type: 			bind
         source:       "Z:\\Docker\\DevContainers\\Technovine\\site\\data"
-        target:       "/volumes/site-data"
+        target:       "/vol/site-data"
         read_only:    false
       - type: 			bind
         source:       "Z:\\Docker\\DevContainers\\Technovine\\site\\storage"
-        target:       "/volumes/site-storage"
+        target:       "/vol/site-storage"
         read_only:    false
       - type: 			bind
         source:       "Z:\\Docker\\DevContainers\\Technovine\\db\\data"
-        target:       "/volumes/db-data"
+        target:       "/vol/db-data"
         read_only:    false
   
 #★ Tailscale VPN Mesh
@@ -77,7 +77,7 @@ services:
 #★ Technovine Site Container
   site:
     build:
-      context:        "/.devcontainer"
+      context:        "/Technovine/.docker"
       dockerfile:     "technovine.dockerfile"
     container_name:   technovine
     hostname:         technovine-site
@@ -95,15 +95,15 @@ services:
     volumes:
       - type: 			bind
         source:       "Z:\\Docker\\DevContainers\\Technovine\\site\\data"
-        target:       "/volumes/site-data"
+        target:       "/vol/site-data"
         read_only:    false
       - type: 			bind
         source:       "Z:\\Docker\\DevContainers\\Technovine\\site\\storage"
-        target:     	"/volumes/site-storage"
+        target:     	"/vol/site-storage"
         read_only:  	false
       - type: 			bind
         source:     	"Z:\\Docker\\DevContainers\\Technovine\\db\\data"
-        target:     	"/volumes/db-data"
+        target:     	"/vol/db-data"
         read_only:  	false
 
 #★ MySQL Database
@@ -135,7 +135,7 @@ services:
     volumes:
       - type: 			bind
         source:     	"Z:\\Docker\\DevContainers\\Technovine\\db\\data"
-        target:     	"/volumes/db-data"
+        target:     	"/vol/db-data"
         read_only:  	false
 
 #★ NGINX Webhost
@@ -160,11 +160,11 @@ services:
         read_only:  	true
       - type: 			bind
         source:     	"Z:\\Docker\\DevContainers\\Technovine\\site\\data"
-        target:     	"/volumes/site-data"
+        target:     	"/vol/site-data"
         read_only:  	false
       - type: 			bind
         source:     	"Z:\\Docker\\DevContainers\\Technovine\\site\\storage"
-        target:     	"/volumes/site-storage"
+        target:     	"/vol/site-storage"
         read_only:  	true
 
 
