@@ -62,7 +62,8 @@ Content.
 > Content.
 
 
-<br />
+
+<br /><br />
 
 ### Syntax: A Double Line Break
 ```markdown
@@ -79,6 +80,34 @@ Content.
 > ...content.
 > 
 > <br /><br />
+> 
+> #### New Section
+> 
+> Content.
+
+
+
+<br /><br />
+
+### Syntax: A Divider + Line Break
+```markdown
+...content.
+
+<br />
+
+---
+
+#### New Section
+
+Content.
+```
+
+### Output
+> ...content.
+> 
+> <br />
+> 
+> ---
 > 
 > #### New Section
 > 
