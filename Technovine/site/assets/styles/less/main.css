@@ -35,7 +35,15 @@ body h4 {
   color: hsl(205, 75%, 90%);
 }
 body .terminal {
-  background-color: black;
+  background-color: hsl(205, 100%, 10%);
+  background-attachment: fixed;
+  border: 1.5px solid hsl(195, 14%, 39%);
+  border-radius: 10px;
+  box-shadow: 1px 1px 3px hsla(0, 0%, 0%, 0.9) inset;
+  margin: 8.33%;
 }
-
-
+body .terminal pre {
+  padding: 10px;
+  background-attachment: scroll;
+  line-height: 150%;
+}

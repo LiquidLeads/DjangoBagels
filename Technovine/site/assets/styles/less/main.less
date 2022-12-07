@@ -50,20 +50,27 @@ body {
 @txtColors:		#theme.dark.text(body);
 @txtStyles:		#fonts.body.styles(body);
 
-//- Class Definitions
+//+ Class Definitions
 	background-color: @colorsBG[base];
 	background-size: cover;
+
+	//- Headers
 	& h1, h2, h3, h4 {
 		font-family: @fonts[headers];
 		color: @txtColors[headers];
 	}
+
+	//- Terminal
 	& .terminal {
 		background-color: @colorsBG[codeTerm];
 		background-attachment: @termCont[termAttach];
 		border: @termCont[termBorder];
 		border-radius: @termCont[corners];
 		box-shadow: @termCont[innerShadow];
-		& code {
+		margin: 8.33%;
+
+		//- Code
+		& pre {
 			padding: @codeCont[consolePadd];
 			background-attachment: @codeCont[codeAttach];
 			line-height: @codeCont[lineHeight];
