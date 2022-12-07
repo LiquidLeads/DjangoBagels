@@ -30,12 +30,17 @@
 
  ---
 
- # Dividers & Breaks
+# Dividers & Breaks
 
 Line breaks use the HTML `break` tag and, like most elements, must be inserted with a blank line on top and bottom of the break.
 
- ## Line Breaks
- With a line break
+
+
+## Line Breaks
+
+### Syntax
+A single line break
+
  ```markdown
 ...content.
 
@@ -45,3 +50,15 @@ Line breaks use the HTML `break` tag and, like most elements, must be inserted w
 
 Content.
  ```
+
+### Output
+
+> ...content.
+> 
+> <br />
+> 
+> #### New Section
+> 
+> Content.
+
+
