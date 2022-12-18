@@ -13,8 +13,8 @@
 @txtStyles: 	#fonts.body.styles(headers);
 
 //- Class Definitions
-	margin-left: @properties[margins];
-	margin-right: @properties[margins];
+	// margin-left: @properties[margins];
+	// margin-right: @properties[margins];
 	background-color: @colorsBG[headCont];
 	& header {
 		padding-top: @properties[paddingTop];
@@ -53,11 +53,28 @@ body {
 //+ Class Definitions
 	background-color: @colorsBG[base];
 	background-size: cover;
+	margin: @body[margins];
 
 	//- Headers
 	& h1, h2, h3, h4 {
 		font-family: @fonts[headers];
 		color: @txtColors[headers];
+	}
+
+	//- Main Container
+	& .mainContainer {
+		background-color: @colorsBG[mainCont];
+		font-family: @fonts[para];
+		font-size: @text[paraSize];
+		font-weight: @text[paraWeight];
+		color: @txtColors[para];
+		padding-left: @mainCont[sidePadding];
+		padding-right: @mainCont[sidePadding];
+		padding-top: @mainCont[topPadding];
+		padding-bottom: @mainCont[topPadding];
+
+
+		
 	}
 
 	//- Terminal

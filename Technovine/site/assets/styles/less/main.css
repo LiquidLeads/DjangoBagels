@@ -1,7 +1,5 @@
 @import "../../fonts/css-imports/google-fonts.css";
 .headContainer {
-  margin-left: 8.33%;
-  margin-right: 8.33%;
   background-color: hsl(0, 0%, 40%);
 }
 .headContainer header {
@@ -26,6 +24,7 @@
 body {
   background-color: hsl(0, 0%, 10%);
   background-size: cover;
+  margin: 8.33%;
 }
 body h1,
 body h2,
@@ -33,6 +32,17 @@ body h3,
 body h4 {
   font-family: "Red Hat Display", sans-serif;
   color: hsl(205, 75%, 90%);
+}
+body .mainContainer {
+  background-color: hsl(0, 0%, 20%);
+  font-family: "Assistant", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: hsl(0, 0%, 85%);
+  padding-left: 8.33%;
+  padding-right: 8.33%;
+  padding-top: 4.15%;
+  padding-bottom: 4.15%;
 }
 body .terminal {
   background-color: hsl(205, 100%, 10%);
