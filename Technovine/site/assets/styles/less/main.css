@@ -38,6 +38,7 @@ body .mainContainer {
   font-family: "Assistant", sans-serif;
   font-size: 1rem;
   font-weight: 400;
+  line-height: 2rem;
   color: hsl(0, 0%, 85%);
   padding-left: 8.33%;
   padding-right: 8.33%;
